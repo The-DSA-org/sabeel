@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sabeel_app/core/app_images/app_images.dart';
+import 'package:sabeel_app/core/routing/routes_names.dart';
 import 'package:sabeel_app/core/theming/app_text_styles.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -21,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
 
-    _backgroundImage = Image.asset('assets/images/splash_background.jpg');
+    _backgroundImage = Image.asset(AppImages.splashBackground);
 
     _controller = AnimationController(
       vsync: this,
@@ -41,6 +43,11 @@ class _SplashScreenState extends State<SplashScreen>
     );
 
     _controller.forward();
+    _controller.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        Navigator.pushReplacementNamed(context, Routes.onBoardingScreen);
+      }
+    });
   }
 
   @override
@@ -82,7 +89,7 @@ class _SplashScreenState extends State<SplashScreen>
                   );
                 },
                 child: Image.asset(
-                  'assets/images/launcher_icon-removebg-preview (2).png',
+                  AppImages.appLogo,
                   height: 130.h,
                 ),
               ),
