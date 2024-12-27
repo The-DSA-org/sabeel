@@ -19,8 +19,7 @@ class SabeelApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Diva shopping app',
           theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: AppColors.chineseWhite),
-              scaffoldBackgroundColor: AppColors.mediumJungleGreen,),
+              colorScheme: ColorScheme.fromSeed(seedColor: AppColors.chineseWhite)),
           initialRoute: Routes.splashScreen,
           onGenerateRoute: appRouter.generateRoute,
         );

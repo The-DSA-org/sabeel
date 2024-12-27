@@ -5,6 +5,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class AppTextStyles {
+  static TextStyle font16CairoBlack = GoogleFonts.cairo(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+    color: Colors.grey.shade900,
+  );
   static TextStyle font12AmiriWhite = GoogleFonts.amiri(
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
