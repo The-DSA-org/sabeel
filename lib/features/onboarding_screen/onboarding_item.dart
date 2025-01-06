@@ -20,7 +20,7 @@ Widget onBoardingItem(OnBoardingModel model, context) => Column(
         children: [
           Text(
             model.text,
-            style: AppTextStyles.font24AmiriWhite,
+            style: AppTextStyles.font24CairoWhite,
             textAlign: TextAlign.center,
           ),
         ],

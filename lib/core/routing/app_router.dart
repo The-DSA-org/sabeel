@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sabeel_app/core/di/di.dart';
 import 'package:sabeel_app/core/routing/routes_names.dart';
-import 'package:sabeel_app/features/azkar/ui/screens/azkar_and_dua_screen.dart';
-import 'package:sabeel_app/features/home_screen/ui/home_screen.dart';
+import 'package:sabeel_app/features/home_layout/logic/home_layout_cubit.dart';
+import 'package:sabeel_app/features/home_layout/ui/home_layout.dart';
 import '../../features/onboarding_screen/onboarding_screen.dart';
 import '../../features/splash_screen/splash_screen.dart';
 
@@ -17,23 +19,22 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const OnBoardingScreen(),
         );
-
-      case Routes.homeScreen:
+      case Routes.homeLayout:
         return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
-        );
-
-      case Routes.azkarScreen:
-        return MaterialPageRoute(
-          builder: (_) => const AzkarAndDuaScreen(),
+          builder: (_) =>
+              BlocProvider(
+                create: (context) => getIt<HomeLayoutCubit>(),
+                child: HomeLayout(),
+              ),
         );
       default:
         return MaterialPageRoute(
-          builder: (_) => Scaffold(
-            body: Center(
-              child: Text('No route defined for ${settings.name}'),
-            ),
-          ),
+          builder: (_) =>
+              Scaffold(
+                body: Center(
+                  child: Text('No route defined for ${settings.name}'),
+                ),
+              ),
         );
     }
   }
