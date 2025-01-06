@@ -44,7 +44,7 @@ dependencies:
   freezed: ^2.4.5
   freezed_annotation: ^2.4.1
   # for dependency injection.
-  get_it: ^8.0.0
+  get_it: ^8.0.3
   # Automatically generate code for converting to and from JSON by annotating Dart classes.
   json_serializable: ^6.6.1
   json_annotation: ^4.9.0
@@ -78,6 +78,7 @@ dependencies:
   #A Flutter Geocoding plugin which provides easy geocoding and reverse-geocoding features.
   geocoding: ^3.0.0
   smooth_page_indicator: ^1.2.0+3
+  font_awesome_flutter: ^10.8.0
 
 dev_dependencies:
   flutter_test:
