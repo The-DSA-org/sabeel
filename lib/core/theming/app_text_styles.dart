@@ -20,6 +20,7 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.chineseWhite,
   );
+
   static TextStyle font16AmiriWhite = GoogleFonts.amiri(
     fontSize: 16.sp,
     fontWeight: FontWeight.w400,
@@ -33,6 +34,11 @@ class AppTextStyles {
   static TextStyle font20AmiriWhite = GoogleFonts.amiri(
     fontSize: 20.sp,
     fontWeight: FontWeight.w400,
+    color: AppColors.chineseWhite,
+  );
+  static TextStyle font22CairoWhite = GoogleFonts.cairo(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w600,
     color: AppColors.chineseWhite,
   );
   static TextStyle font24AmiriWhite = GoogleFonts.amiri(
