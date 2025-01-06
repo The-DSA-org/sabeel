@@ -43,7 +43,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   void submit() {
     SharedPrefHelper.setData('onboarding', true).then((value) {
         Navigator.pushNamedAndRemoveUntil(
-            context, Routes.homeScreen, (route) => false);
+            context, Routes.homeLayout, (route) => false);
 
     });
   }
@@ -77,7 +77,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   child: TextButton(
                       onPressed: submit,
                       child:
-                          Text('تخطي', style: AppTextStyles.font18AmiriWhite)),
+                          Text('تخطي', style: AppTextStyles.font18CairoWhite)),
                 ),
               ),
               Image.asset(AppImages.appLogo,height: 90.h,),
