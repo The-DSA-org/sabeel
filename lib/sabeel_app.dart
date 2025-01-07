@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sabeel_app/core/theming/app_colors.dart';
 import 'package:sabeel_app/core/theming/app_themes.dart';
 import 'core/routing/app_router.dart';
 import 'core/routing/routes_names.dart';
@@ -18,11 +17,8 @@ class SabeelApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Sabeel app',
           theme: darkTheme,
-          // theme: ThemeData(
-          //     colorScheme: ColorScheme.fromSeed(seedColor: AppColors.chineseWhite)),
-          initialRoute: Routes.azkarScreen,
+          initialRoute: Routes.splashScreen,
           onGenerateRoute: appRouter.generateRoute,
         );
       },

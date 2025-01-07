@@ -6,25 +6,25 @@ import 'package:sabeel_app/core/theming/app_colors.dart';
 
 ThemeData darkTheme = ThemeData(
   scaffoldBackgroundColor: AppColors.ebony,
-  // textTheme: TextTheme(
-  //   bodyLarge: GoogleFonts.cairo(
-  //     fontSize: 18.0,
-  //     fontWeight: FontWeight.w600,
-  //     color: Colors.white,
-  //   ),
-  //   bodyMedium: GoogleFonts.cairo(
-  //     fontSize: 14.0,
-  //     fontWeight: FontWeight.w600,
-  //     color: Colors.white,
-  //     height: 1.2,
-  //   ),
-  // ),
+  textTheme: TextTheme(
+    bodyLarge: GoogleFonts.cairo(
+      fontSize: 18.0,
+      fontWeight: FontWeight.w600,
+      color: AppColors.chineseWhite,
+    ),
+    bodyMedium: GoogleFonts.cairo(
+      fontSize: 14.0,
+      fontWeight: FontWeight.w600,
+      color: AppColors.chineseWhite,
+      height: 1.2,
+    ),
+  ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: AppColors.ebony,
     type: BottomNavigationBarType.fixed,
-    selectedItemColor: AppColors.ebony,
-    unselectedItemColor: AppColors.chineseWhite,
-    //  elevation: 20.0,
+    selectedItemColor: Colors.white,
+    unselectedItemColor: AppColors.mintGreen,
+     elevation: 20.0,
   ),
   appBarTheme: AppBarTheme(
     backgroundColor: AppColors.ebony,
@@ -49,4 +49,5 @@ ThemeData darkTheme = ThemeData(
     ),
   ),
   colorScheme: ColorScheme.fromSeed(seedColor: AppColors.ebony),
+
 );
