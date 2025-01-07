@@ -36,6 +36,11 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.chineseWhite,
   );
+  static TextStyle font22CairoWhite = GoogleFonts.cairo(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.chineseWhite,
+  );
   static TextStyle font24CairoWhite = GoogleFonts.cairo(
     fontSize: 24.sp,
     fontWeight: FontWeight.w400,

@@ -13,14 +13,11 @@ class HomeLayout extends StatelessWidget {
     return BlocBuilder<HomeLayoutCubit, HomeLayoutState>(
       builder: (context, state) {
         return Scaffold(
-          backgroundColor: AppColors.gunmetal,
+          // backgroundColor: AppColors.gunmetal,
           body: BlocProvider.of<HomeLayoutCubit>(context)
               .screens[BlocProvider.of<HomeLayoutCubit>(context).selectedIndex],
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.shifting,
-              selectedItemColor: Colors.white,
-              unselectedItemColor: AppColors.mintGreen,
-              backgroundColor: AppColors.gunmetal,
               selectedLabelStyle: AppTextStyles.font14CairoWhite,
               unselectedLabelStyle: AppTextStyles.font14CairoWhite,
               showUnselectedLabels: true,
@@ -33,29 +30,30 @@ class HomeLayout extends StatelessWidget {
               },
               items: [
 
-
-
-
                 BottomNavigationBarItem(
                     icon: Icon(FontAwesomeIcons.scroll),
                     label: 'أحاديث',
-                    backgroundColor: AppColors.gunmetal),
+                    backgroundColor: AppColors.darkEbony
+                ),
                 BottomNavigationBarItem(
                     icon: Icon(FontAwesomeIcons.bookQuran),
                     label: 'قرآن',
-                    backgroundColor: AppColors.gunmetal),
+                    backgroundColor: AppColors.darkEbony
+                ),
                 BottomNavigationBarItem(
                     icon: Icon(FontAwesomeIcons.mosque),
                     label: 'المواقيت',
-                    backgroundColor: AppColors.gunmetal),
+                    backgroundColor: AppColors.darkEbony
+                ),
                 BottomNavigationBarItem(
                     icon: Icon(FontAwesomeIcons.starAndCrescent),
                     label: 'الأذكار',
-                    backgroundColor: AppColors.gunmetal),
+                    backgroundColor: AppColors.darkEbony
+                ),
                 BottomNavigationBarItem(
                     icon: Icon(FontAwesomeIcons.house),
                     label: 'الرئيسية',
-                    backgroundColor: AppColors.gunmetal),
+                    backgroundColor: AppColors.darkEbony),
 
 
               ]),

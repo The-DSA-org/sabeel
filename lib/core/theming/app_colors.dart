@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors{
   static const Color hookersGreen=Color(0xFF57736A);
   static const Color ebony=Color(0xFF4b5945);
+  static const Color darkEbony=Color(0xff303c2d);
   static const Color resedaGreen=Color(0xFF5f7761);
   static const Color dimGray=Color(0xFF66785F);
   static const Color mintGreen=Color(0xFFB2C9AD);
