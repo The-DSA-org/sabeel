@@ -11,7 +11,7 @@ class AzkarAndDuaScreen extends StatelessWidget{
       child: Scaffold(
         appBar: AppBar(
           title:  Text(
-            'أدعية واذكار',
+            'أدعية وأذكار',
             style: AppTextStyles.font22CairoWhite,
           ),
           centerTitle: true,
