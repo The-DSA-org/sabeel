@@ -27,6 +27,7 @@ ThemeData darkTheme = ThemeData(
      elevation: 20.0,
   ),
   appBarTheme: AppBarTheme(
+    centerTitle: true,
     backgroundColor: AppColors.ebony,
     titleSpacing: 20.0,
     elevation: 0.0,

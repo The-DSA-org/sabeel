@@ -8,15 +8,12 @@ class HadithScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
         title: Text(
           'الأحاديث النبوية',
-          style: AppTextStyles.font20CairoWhite,
+          style: AppTextStyles.font22CairoWhite,
         ),
         centerTitle: true,
-        elevation: 0,
-        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: HadithTab(),
     );
