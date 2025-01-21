@@ -12,3 +12,12 @@ class AppImages {
   static const String islamicPattern =
       'assets/images/islamic-pattern-seamless-arabic-geometric-pattern-east-ornament-indian-ornament-persian-motif-d-endless-texture-islamic-pattern-108252027-removebg-preview.png';
 }
+
+
+List<String> imagesOfAzkar = [
+  'assets/images/midnight.png',
+  'assets/images/sleeping.png',
+  'assets/images/wake_up.png',
+  'assets/images/pray.png',
+  'assets/images/air_plane.png',
+];
