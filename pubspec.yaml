@@ -77,14 +77,21 @@ dependencies:
   location: ^7.0.0
   #A Flutter Geocoding plugin which provides easy geocoding and reverse-geocoding features.
   geocoding: ^3.0.0
+  #Customizable animated page indicator with a set of built-in effects.
   smooth_page_indicator: ^1.2.0+3
+  #The Font Awesome Icon pack available as Flutter Icons. Provides 2000 additional icons to use in your apps.
   font_awesome_flutter: ^10.8.0
-  flutter_localization: ^0.3.0
+  #Contains code to deal with internationalized/localized messages, date and number formatting and parsing, bi-directional text, and other internationalization issues.
+  intl: ^0.19.0
+  #Just An Amazing Hijri Date Converter That Converts Date From Gregorian to Hijri and From Hijri to Gregorian.
+  jhijri: ^1.0.0
+
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -97,7 +104,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
+  generate: true
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

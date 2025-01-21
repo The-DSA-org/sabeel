@@ -17,7 +17,7 @@ class HomeLayout extends StatelessWidget {
           body: BlocProvider.of<HomeLayoutCubit>(context)
               .screens[BlocProvider.of<HomeLayoutCubit>(context).selectedIndex],
           bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.shifting,
+              type: BottomNavigationBarType.shifting,
               selectedLabelStyle: AppTextStyles.font14CairoWhite,
               unselectedLabelStyle: AppTextStyles.font14CairoWhite,
               showUnselectedLabels: true,
@@ -29,33 +29,26 @@ class HomeLayout extends StatelessWidget {
                     .changeBottomNavBarTab(index);
               },
               items: [
-
-                BottomNavigationBarItem(
-                    icon: Icon(FontAwesomeIcons.scroll),
-                    label: 'أحاديث',
-                    backgroundColor: AppColors.darkEbony
-                ),
-                BottomNavigationBarItem(
-                    icon: Icon(FontAwesomeIcons.bookQuran),
-                    label: 'قرآن',
-                    backgroundColor: AppColors.darkEbony
-                ),
-                BottomNavigationBarItem(
-                    icon: Icon(FontAwesomeIcons.mosque),
-                    label: 'المواقيت',
-                    backgroundColor: AppColors.darkEbony
-                ),
-                BottomNavigationBarItem(
-                    icon: Icon(FontAwesomeIcons.starAndCrescent),
-                    label: 'الأذكار',
-                    backgroundColor: AppColors.darkEbony
-                ),
                 BottomNavigationBarItem(
                     icon: Icon(FontAwesomeIcons.house),
                     label: 'الرئيسية',
                     backgroundColor: AppColors.darkEbony),
-
-
+                BottomNavigationBarItem(
+                    icon: Icon(FontAwesomeIcons.starAndCrescent),
+                    label: 'الأذكار',
+                    backgroundColor: AppColors.darkEbony),
+                BottomNavigationBarItem(
+                    icon: Icon(FontAwesomeIcons.mosque),
+                    label: 'المواقيت',
+                    backgroundColor: AppColors.darkEbony),
+                BottomNavigationBarItem(
+                    icon: Icon(FontAwesomeIcons.bookQuran),
+                    label: 'قرآن',
+                    backgroundColor: AppColors.darkEbony),
+                BottomNavigationBarItem(
+                    icon: Icon(FontAwesomeIcons.scroll),
+                    label: 'أحاديث',
+                    backgroundColor: AppColors.darkEbony),
               ]),
         );
       },

@@ -31,7 +31,7 @@ class _TasbehRingWidgetState extends State<TasbehRingWidget> {
           borderRadius: BorderRadius.circular(16.r),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'حلقة التسبيح',
@@ -44,24 +44,13 @@ class _TasbehRingWidgetState extends State<TasbehRingWidget> {
             Text(
               'قال رسول الله ﷺ :مَثَلُ الذي يَذْكُرُ رَبَّهُ والذي لا يَذْكُرُ رَبَّهُ، مَثَلُ الحَيِّ والمَيِّتِ',
               style: AppTextStyles.font16CairoWhite,
-              textAlign: TextAlign.end,
+              textAlign: TextAlign.start,
             ),
             SizedBox(
               height: 15.h,
             ),
             Row(
               children: [
-                Column(
-                  children: [
-                    TasbehRingItem('سبحان الله', AppColors.hookersGreen,
-                        azkarState[0]),
-                    TasbehRingItem('أستغفر الله', AppColors.gunmetal,
-                       azkarState[1]),
-                    TasbehRingItem('الله أكبر', AppColors.charcoal,
-                        azkarState[2]),
-                  ],
-                ),
-                Spacer(),
                 GestureDetector(
                   onTap: () {
                     setState(() {
@@ -73,11 +62,11 @@ class _TasbehRingWidgetState extends State<TasbehRingWidget> {
                         Future.delayed(Duration(milliseconds: 500), () {
                           setState(() {
                             progress =
-                                0.0; // Reset progress after completing the circle
+                            0.0; // Reset progress after completing the circle
                             currentZekr++; // Increment currentZekr
                             if (currentZekr == 3) {
                               currentZekr =
-                                  0; // Reset currentZekr after reaching 3
+                              0; // Reset currentZekr after reaching 3
                               azkarState=[false,false,false];
                             }
                           });
@@ -112,6 +101,17 @@ class _TasbehRingWidgetState extends State<TasbehRingWidget> {
                           style: TextStyle(fontSize: 18, color: Colors.white)),
                     ],
                   ),
+                ),
+                Spacer(),
+                Column(
+                  children: [
+                    TasbehRingItem('سبحان الله', AppColors.hookersGreen,
+                        azkarState[0]),
+                    TasbehRingItem('أستغفر الله', AppColors.gunmetal,
+                       azkarState[1]),
+                    TasbehRingItem('الله أكبر', AppColors.charcoal,
+                        azkarState[2]),
+                  ],
                 ),
               ],
             ),
