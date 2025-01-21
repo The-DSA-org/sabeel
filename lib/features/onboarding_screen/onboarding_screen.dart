@@ -73,7 +73,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 padding: EdgeInsets.only(
                     top: 25.h, left: 10.w,right: 10.w),
                 child: Align(
-                  alignment: AlignmentDirectional.topEnd,
+                  alignment: AlignmentDirectional.topStart,
                   child: TextButton(
                       onPressed: submit,
                       child:

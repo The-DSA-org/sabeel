@@ -10,13 +10,13 @@ class GreetingLine extends StatelessWidget {
     return Align(
       alignment: Alignment.topRight,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            '،السلام عليكم',
+            'السلام عليكم،',
             style: AppTextStyles.font16CairoWhite,
           ),
-          Text('!أهلاً بك', style: AppTextStyles.font16CairoWhite),
+          Text('أهلاً بك!', style: AppTextStyles.font16CairoWhite),
         ],
       ),
     );

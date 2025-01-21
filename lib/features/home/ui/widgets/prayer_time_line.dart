@@ -7,9 +7,9 @@ class PrayerTimeLine extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text('5:14'),
-        Spacer(),
         Text('الفجر'),
+        Spacer(),
+        Text('5:14'),
       ],
     );
   }

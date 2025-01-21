@@ -14,13 +14,13 @@ part 'home_layout_cubit.freezed.dart';
 class HomeLayoutCubit extends Cubit<HomeLayoutState> {
   HomeLayoutCubit() : super(const HomeLayoutState.initial());
 
-  int selectedIndex = 4;
+  int selectedIndex = 0;
   List<Widget> screens = [
-    HadithScreen(),
-    QuranScreen(),
-    PrayerTimesScreen(),
-    AzkarAndDuaScreen(),
     HomeScreen(),
+    AzkarAndDuaScreen(),
+    PrayerTimesScreen(),
+    QuranScreen(),
+    HadithScreen(),
   ];
 
   void changeBottomNavBarTab(int newSelectedIndex) {
