@@ -7,12 +7,11 @@ import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_text_styles.dart';
 
 class DailyItemWidget extends StatelessWidget {
-  String title;
-  Text mainText;
-  Text? subText;
-  String copiedText;
-
-  DailyItemWidget(this.title, this.mainText, this.subText,this.copiedText);
+  final String title;
+  final String mainText;
+  final Text? subText;
+  final Widget? counter;
+  const DailyItemWidget({super.key, required this.title,required this.mainText, this.subText, this.counter,});
 
   @override
   Widget build(BuildContext context) {
@@ -45,12 +44,14 @@ class DailyItemWidget extends StatelessWidget {
                     Spacer(),
                     Text(
                       title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: AppTextStyles.font16CairoWhite,
                     ),
                     Spacer(),
                     GestureDetector(
                       onTap: () {
-                        Clipboard.setData(ClipboardData(text: copiedText));
+                        Clipboard.setData(ClipboardData(text: mainText));
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                               content: Center(child: Text("تم النسخ"))),
@@ -76,14 +77,19 @@ class DailyItemWidget extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                   mainText,
+                    Text(
+                      mainText,
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.font14CairoWhite,
+                    ),
                     SizedBox(
                       height: 10.h,
                     ),
                     subText==null?SizedBox():subText!
                   ],
                 ),
-              )
+              ),
+              counter!=null?counter!:SizedBox(),
             ],
           ),
         ),
