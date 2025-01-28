@@ -76,10 +76,10 @@ class _NextPrayerWidgetState extends State<NextPrayerWidget> {
               _progressTimer = Timer.periodic(Duration(seconds: 1), (timer) {
                 DateTime currentTime = DateTime.now();
                 Duration remainingTime =
-                    _nextPrayerTime!.difference(currentTime);
+                _nextPrayerTime!.difference(currentTime);
 
                 if (remainingTime.isNegative) {
-                  remainingTime = Duration.zero; // Reset to zero if time is up
+                  remainingTime = Duration.zero;
                   timer.cancel();
                 }
               });
@@ -120,8 +120,20 @@ class _NextPrayerWidgetState extends State<NextPrayerWidget> {
                               style: AppTextStyles.font12CairoWhite,
                             ),
                             Spacer(),
-                            CountdownTimer(targetTime: _nextPrayerTime!),
-
+                            CountdownTimer(
+                              targetTime: _nextPrayerTime!,
+                              onTimerFinished: () {
+                                // Call the API again to fetch the next prayer time
+                                BlocProvider.of<HomeScreenCubit>(context)
+                                    .getNextPrayer(AdhanQueryParamRequest(
+                                  latitude: widget.latitude,
+                                  longitude: widget.longitude,
+                                  day: DateTime.now().day,
+                                  month: DateTime.now().month,
+                                  year: DateTime.now().year,
+                                ));
+                              },
+                            ),
                           ],
                         )
                       ],
@@ -146,8 +158,10 @@ class _NextPrayerWidgetState extends State<NextPrayerWidget> {
 
 class CountdownTimer extends StatefulWidget {
   final DateTime targetTime;
+  final VoidCallback onTimerFinished; // Add this line
 
-  const CountdownTimer({required this.targetTime, Key? key}) : super(key: key);
+  const CountdownTimer({required this.targetTime, required this.onTimerFinished, Key? key})
+      : super(key: key);
 
   @override
   _CountdownTimerState createState() => _CountdownTimerState();
@@ -169,10 +183,11 @@ class _CountdownTimerState extends State<CountdownTimer> {
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       _remainingTimeNotifier.value =
           widget.targetTime.difference(DateTime.now());
+
       if (_remainingTimeNotifier.value.isNegative) {
-        _remainingTimeNotifier.value =
-            Duration.zero; // Reset to zero if time is up
+        _remainingTimeNotifier.value = Duration.zero; // Reset to zero if time is up
         _timer.cancel();
+        widget.onTimerFinished(); // Call the callback here
       }
     });
   }
