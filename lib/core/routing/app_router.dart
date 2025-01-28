@@ -36,10 +36,6 @@ class AppRouter {
                 child: HomeLayout(),
               ),
         );
-      case Routes.zikrScreen:
-        return MaterialPageRoute(
-          builder: (_) => const ZikrScreen(),
-        );
       default:
         return MaterialPageRoute(
           builder: (_) =>
