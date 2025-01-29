@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sabeel_app/core/theming/app_text_styles.dart';
 import 'package:sabeel_app/features/hadith/logic/cubit/hadith_cubit.dart';
 import 'package:sabeel_app/features/hadith/ui/widgets/hadith_card.dart';
 import 'package:sabeel_app/features/hadith/ui/widgets/hadith_card_shimmer.dart';
@@ -27,11 +28,24 @@ class HadithListView extends StatelessWidget {
                 },
               );
             } else {
-              return Center(child: Text('No Hadiths available.'));
+              return Center(
+                  child: Text(
+                'لا توجد أحاديث متوفرة.',
+                style: AppTextStyles.font18CairoWhite,
+              ));
             }
           },
-          hadithError: (errorHandler) => Center(child: Text('Error')),
-          orElse: () => Center(child: Text('يرجى الإنتظار')),
+          hadithError: (errorHandler) => Center(
+            child: Text(
+              errorHandler.apiErrorModel.message ?? 'لا توجد أحاديث متوفرة.',
+              style: AppTextStyles.font18CairoWhite,
+            ),
+          ),
+          orElse: () => Center(
+              child: Text(
+            'يرجى الإنتظار',
+            style: AppTextStyles.font18CairoWhite,
+          )),
         );
       },
     );

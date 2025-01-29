@@ -12,28 +12,27 @@ class HadithCardShimmer extends StatelessWidget {
     return Card(
       margin: EdgeInsets.symmetric(vertical: 8.h, horizontal: 16.w),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      elevation: 4,
-      color: AppColors.resedaGreen,
+      elevation: 8,
+      color: AppColors.dimGray,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Shimmer for the logo
             Shimmer.fromColors(
               baseColor: AppColors.dimGray,
               highlightColor: AppColors.mintGreen,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(100),
-                child: Container(
-                  width: 100.h,
-                  height: 100.w,
-                  color: Colors.white,
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                decoration: BoxDecoration(
+                  color: AppColors.ebony,
+                  borderRadius: BorderRadius.circular(8),
                 ),
+                width: 120.w,
+                height: 20.h,
               ),
             ),
             verticalSpace(5),
-
-            // Shimmer for the Arabic text
             Shimmer.fromColors(
               baseColor: AppColors.dimGray,
               highlightColor: AppColors.mintGreen,
@@ -44,8 +43,6 @@ class HadithCardShimmer extends StatelessWidget {
               ),
             ),
             verticalSpace(10),
-
-            // Shimmer for HadithActionsRow
             Shimmer.fromColors(
               baseColor: AppColors.dimGray,
               highlightColor: AppColors.mintGreen,
