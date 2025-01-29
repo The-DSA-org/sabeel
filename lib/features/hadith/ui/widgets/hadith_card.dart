@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:sabeel_app/core/helpers/spacing.dart';
 import 'package:sabeel_app/core/theming/app_colors.dart';
 import 'package:sabeel_app/core/theming/app_text_styles.dart';
-import 'package:sabeel_app/features/hadith_layout/ui/widgets/hadith_actions_row.dart';
-import 'package:sabeel_app/features/hadith_layout/ui/widgets/hadith_info_row.dart';
-import 'package:sabeel_app/features/hadith_layout/ui/widgets/hadith_logo.dart';
+import 'package:sabeel_app/features/hadith/ui/widgets/hadith_actions_row.dart';
+import 'package:sabeel_app/features/hadith/ui/widgets/hadith_info_row.dart';
+import 'package:sabeel_app/features/hadith/ui/widgets/hadith_logo.dart';
 
 class HadithCard extends StatelessWidget {
   final String hadithArabic;

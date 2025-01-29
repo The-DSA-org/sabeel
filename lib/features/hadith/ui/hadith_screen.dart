@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sabeel_app/core/theming/app_text_styles.dart';
-import 'package:sabeel_app/features/hadith_layout/ui/hadith_tab.dart';
+import 'package:sabeel_app/features/hadith/ui/widgets/hadith_list_view.dart';
 
 class HadithScreen extends StatelessWidget {
   const HadithScreen({super.key});
@@ -15,7 +15,7 @@ class HadithScreen extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: HadithTab(),
+      body: HadithListView(),
     );
   }
 }

@@ -3,7 +3,7 @@ import 'package:sabeel_app/features/home/data/model/adhan_response.dart';
 
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
-import '../../../../core/networking/apis/adhan_api_service.dart';
+import '../../../../core/networking/apis/adhan_api_service/adhan_api_service.dart';
 
 class HomeScreenRepo {
   final AdhanApiService _adhanApiService;

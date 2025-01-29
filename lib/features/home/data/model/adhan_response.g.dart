@@ -242,17 +242,17 @@ Map<String, dynamic> _$GregorianToJson(Gregorian instance) => <String, dynamic>{
     };
 
 Timings _$TimingsFromJson(Map<String, dynamic> json) => Timings(
-      fajr: json['Fajr'] as String?,
-      sunrise: json['Sunrise'] as String?,
-      dhuhr: json['Dhuhr'] as String?,
-      asr: json['Asr'] as String?,
-      sunset: json['Sunset'] as String?,
-      maghrib: json['Maghrib'] as String?,
-      isha: json['Isha'] as String?,
-      imsak: json['Imsak'] as String?,
-      midnight: json['Midnight'] as String?,
-      firstthird: json['Firstthird'] as String?,
-      lastthird: json['Lastthird'] as String?,
+      fajr: json['fajr'] as String?,
+      sunrise: json['sunrise'] as String?,
+      dhuhr: json['dhuhr'] as String?,
+      asr: json['asr'] as String?,
+      sunset: json['sunset'] as String?,
+      maghrib: json['maghrib'] as String?,
+      isha: json['isha'] as String?,
+      imsak: json['imsak'] as String?,
+      midnight: json['midnight'] as String?,
+      firstthird: json['firstthird'] as String?,
+      lastthird: json['lastthird'] as String?,
     );
 
 Map<String, dynamic> _$TimingsToJson(Timings instance) => <String, dynamic>{
