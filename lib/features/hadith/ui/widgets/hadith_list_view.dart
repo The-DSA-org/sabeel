@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sabeel_app/features/hadith/logic/cubit/hadith_cubit.dart';
 import 'package:sabeel_app/features/hadith/ui/widgets/hadith_card.dart';
+import 'package:sabeel_app/features/hadith/ui/widgets/hadith_card_shimmer.dart';
 
 class HadithListView extends StatelessWidget {
   const HadithListView({super.key});
@@ -11,7 +12,7 @@ class HadithListView extends StatelessWidget {
     return BlocBuilder<HadithCubit, HadithState>(
       builder: (context, state) {
         return state.maybeWhen(
-          hadithLoading: () => Center(child: CircularProgressIndicator()),
+          hadithLoading: () => Center(child: HadithCardShimmer()),
           hadithSuccess: (hadithList) {
             if (hadithList.isNotEmpty) {
               return ListView.builder(

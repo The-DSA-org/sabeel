@@ -28,80 +28,52 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bloc: ^8.1.4
+  build_runner: ^2.4.7
+  cached_network_image: ^3.3.1
+  cupertino_icons: ^1.0.8
+  dio: ^5.3.3
   flutter:
     sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.8
-  #A build system for Dart code generation and modular compilation.
-  build_runner: ^2.4.7
-  # State management.
-  bloc: ^8.1.4
   flutter_bloc: ^8.1.3
-  # Code generator (mainly used with cubit & retrofit).
-  freezed: ^2.4.5
-  freezed_annotation: ^2.4.1
-  # for dependency injection.
-  get_it: ^8.0.3
-  # Automatically generate code for converting to and from JSON by annotating Dart classes.
-  json_serializable: ^6.6.1
-  json_annotation: ^4.9.0
-  # Networking.
-  dio: ^5.3.3
-  retrofit: ^4.0.3
-  retrofit_generator: ^9.1.2
-  pretty_dio_logger: ^1.3.1
-  # for splash screen.
-  flutter_native_splash: ^2.4.3
-  # An SVG rendering and widget library for Flutter, which allows painting.
-  flutter_svg: ^2.0.9
-  # for adapting screen and font size.
-  flutter_screenutil: ^5.9.0
-  # Flutter library to load and cache network images.
-  cached_network_image: ^3.3.1
-  # reading and writing simple key-value pairs.
-  shared_preferences: ^2.2.3
-  # provides API to store data in secure storage.
-  flutter_secure_storage: ^9.2.2
-  # easy way to add shimmer effect.
-  shimmer: ^3.0.0
-  #A Flutter package to use fonts from fonts.google.com.
-  google_fonts: ^6.2.1
-  #A Flutter package that allows for dynamic expansion and collapse of text.
-  readmore: ^3.0.0
-  #A Flutter plugin for integrating Google Maps in iOS and Android applications.
-  google_maps_flutter: ^2.9.0
-  #Cross-platform plugin for easy access to device's location in real-time.
-  location: ^7.0.0
-  #A Flutter Geocoding plugin which provides easy geocoding and reverse-geocoding features.
-  geocoding: ^3.0.0
-  #Customizable animated page indicator with a set of built-in effects.
-  smooth_page_indicator: ^1.2.0+3
-  #The Font Awesome Icon pack available as Flutter Icons. Provides 2000 additional icons to use in your apps.
-  font_awesome_flutter: ^10.8.0
-  #Contains code to deal with internationalized/localized messages, date and number formatting and parsing, bi-directional text, and other internationalization issues.
-  intl: ^0.19.0
-  #Just An Amazing Hijri Date Converter That Converts Date From Gregorian to Hijri and From Hijri to Gregorian.
-  jhijri: ^1.0.0
-
   flutter_localizations:
     sdk: flutter
+  flutter_native_splash: ^2.4.3
+  flutter_screenutil: ^5.9.0
+  flutter_secure_storage: ^9.2.2
+  flutter_svg: ^2.0.9
+  font_awesome_flutter: ^10.8.0
+  freezed: ^2.4.5
+  freezed_annotation: ^2.4.1
+  geocoding: ^3.0.0
+  get_it: ^8.0.3
+  google_fonts: ^6.2.1
+  google_maps_flutter: ^2.9.0
+  intl: ^0.19.0
+  jhijri: ^1.0.0
+  json_annotation: ^4.9.0
+  json_serializable: ^6.6.1
+  location: ^7.0.0
+  pretty_dio_logger: ^1.3.1
+  readmore: ^3.0.0
+  retrofit: ^4.0.3
+  retrofit_generator: ^9.1.2
+  shared_preferences: ^2.2.3
+  shimmer: ^3.0.0
+  smooth_page_indicator: ^1.2.0+3
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter packages.
 flutter:
   generate: true
@@ -115,13 +87,10 @@ flutter:
     - assets/images/
     - assets/jsons/azkar.json
   #   - images/a_dot_ham.jpeg
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/to/asset-from-package
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
