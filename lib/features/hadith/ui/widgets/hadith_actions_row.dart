@@ -3,21 +3,24 @@ import 'package:flutter/services.dart';
 import 'package:sabeel_app/core/helpers/spacing.dart';
 import 'package:sabeel_app/core/theming/app_colors.dart';
 import 'package:sabeel_app/core/theming/app_text_styles.dart';
+import 'package:sabeel_app/features/hadith/data/hadith_model.dart';
+import 'package:share_plus/share_plus.dart';
 
 class HadithActionsRow extends StatelessWidget {
   const HadithActionsRow({
     super.key,
-    required this.hadithArabic,
+    required this.hadithModel,
   });
 
-  final String hadithArabic;
-
+  final HadithModel hadithModel;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Share.share(hadithModel.hadithArabic);
+          },
           child: Row(
             children: [
               Text(
@@ -37,10 +40,7 @@ class HadithActionsRow extends StatelessWidget {
         Spacer(),
         GestureDetector(
           onTap: () {
-            Clipboard.setData(ClipboardData(text: hadithArabic));
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text("تم نسخ الحديث!")),
-            );
+            copyHadithText(context);
           },
           child: Row(
             children: [
@@ -55,6 +55,13 @@ class HadithActionsRow extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  void copyHadithText(BuildContext context) {
+    Clipboard.setData(ClipboardData(text: hadithModel.hadithArabic));
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text("تم نسخ الحديث!")),
     );
   }
 }

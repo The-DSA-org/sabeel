@@ -21,9 +21,7 @@ class HadithListView extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final hadith = hadithList[index];
                   return HadithCard(
-                    hadithArabic: hadith.hadithArabic,
-                    bookSlug: hadith.bookSlug,
-                    status: hadith.status,
+                    hadithModel: hadith,
                   );
                 },
               );
