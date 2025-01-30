@@ -3,15 +3,15 @@ import 'package:flutter/services.dart';
 import 'package:sabeel_app/core/helpers/spacing.dart';
 import 'package:sabeel_app/core/theming/app_colors.dart';
 import 'package:sabeel_app/core/theming/app_text_styles.dart';
+import 'package:sabeel_app/features/hadith/data/hadith_model.dart';
 
 class HadithActionsRow extends StatelessWidget {
   const HadithActionsRow({
     super.key,
-    required this.hadithArabic,
+    required this.hadithModel,
   });
 
-  final String hadithArabic;
-
+  final HadithModel hadithModel;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -37,7 +37,7 @@ class HadithActionsRow extends StatelessWidget {
         Spacer(),
         GestureDetector(
           onTap: () {
-            Clipboard.setData(ClipboardData(text: hadithArabic));
+            Clipboard.setData(ClipboardData(text: hadithModel.hadithArabic));
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(content: Text("تم نسخ الحديث!")),
             );

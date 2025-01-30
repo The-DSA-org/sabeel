@@ -14,6 +14,7 @@ HadithModel _$HadithModelFromJson(Map<String, dynamic> json) => HadithModel(
       englishNarrator: json['englishNarrator'] as String,
       bookSlug: json['bookSlug'] as String,
       status: json['status'] as String,
+      chapter: Chapter.fromJson(json['chapter'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$HadithModelToJson(HadithModel instance) =>
@@ -25,4 +26,19 @@ Map<String, dynamic> _$HadithModelToJson(HadithModel instance) =>
       'englishNarrator': instance.englishNarrator,
       'bookSlug': instance.bookSlug,
       'status': instance.status,
+      'chapter': instance.chapter,
+    };
+
+Chapter _$ChapterFromJson(Map<String, dynamic> json) => Chapter(
+      id: (json['id'] as num).toInt(),
+      chapterNumber: json['chapterNumber'] as String,
+      chapterEnglish: json['chapterEnglish'] as String,
+      chapterArabic: json['chapterArabic'] as String,
+    );
+
+Map<String, dynamic> _$ChapterToJson(Chapter instance) => <String, dynamic>{
+      'id': instance.id,
+      'chapterNumber': instance.chapterNumber,
+      'chapterEnglish': instance.chapterEnglish,
+      'chapterArabic': instance.chapterArabic,
     };
