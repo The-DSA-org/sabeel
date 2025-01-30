@@ -1,9 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:sabeel_app/features/home/data/model/adhan_query_param_request.dart';
 import 'package:sabeel_app/features/home/data/model/adhan_response.dart';
 
-import '../api_constants.dart';
+import '../../api_constants.dart';
 
 part 'adhan_api_service.g.dart';
 

@@ -2,42 +2,44 @@ import 'package:flutter/material.dart';
 import 'package:sabeel_app/core/helpers/spacing.dart';
 import 'package:sabeel_app/core/theming/app_colors.dart';
 import 'package:sabeel_app/core/theming/app_text_styles.dart';
-import 'package:sabeel_app/features/hadith_layout/ui/widgets/hadith_actions_row.dart';
-import 'package:sabeel_app/features/hadith_layout/ui/widgets/hadith_info_row.dart';
-import 'package:sabeel_app/features/hadith_layout/ui/widgets/hadith_logo.dart';
+import 'package:sabeel_app/features/hadith/ui/widgets/book_slug_container.dart';
+import 'package:sabeel_app/features/hadith/ui/widgets/hadith_actions_row.dart';
 
 class HadithCard extends StatelessWidget {
   final String hadithArabic;
   final String bookSlug;
   final String status;
 
-  const HadithCard({
+  HadithCard({
     super.key,
     required this.hadithArabic,
     required this.bookSlug,
     required this.status,
   });
-
+  final Map<String, String> bookSlugTranslations = {
+    'sahih-bukhari': 'صحيح البخاري',
+    'sahih-muslim': 'صحيح مسلم',
+    'riyad-us-saliheen': 'رياض الصالحين',
+  };
   @override
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      elevation: 4,
-      color: AppColors.resedaGreen,
+      elevation: 8,
+      color: AppColors.dimGray,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            HadithLogo(),
+            BookSlugContainer(
+                bookSlugTranslations: bookSlugTranslations, bookSlug: bookSlug),
             verticalSpace(5),
             Text(
               hadithArabic,
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.right,
               style: AppTextStyles.font18CairoWhite,
             ),
-            verticalSpace(10),
-            HadithInfoRow(bookSlug: bookSlug, status: status),
             verticalSpace(10),
             Divider(
               color: AppColors.chineseWhite,
