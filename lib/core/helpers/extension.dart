@@ -22,12 +22,12 @@ extension ToArabianNumbers on String {
 extension PrayerNameTranslation on String {
   String toArabicPrayerName() {
     const Map<String, String> prayerNames = {
-      'fajr': 'الفجر',
-      'dhuhr': 'الظهر',
-      'asr': 'العصر',
-      'maghrib': 'المغرب',
-      'isha': 'العشاء',
-      'sunrise': 'الشروق',
+      'Fajr': 'الفجر',
+      'Dhuhr': 'الظهر',
+      'Asr': 'العصر',
+      'Maghrib': 'المغرب',
+      'Isha': 'العشاء',
+      'Sunrise': 'الشروق',
     };
 
     return prayerNames[this] ?? this; // Return Arabic name if found, otherwise original

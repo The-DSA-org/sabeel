@@ -1,5 +1,7 @@
 class ApiConstants {
   static const String adhanApiUrl = 'http://api.aladhan.com/v1';
+  static const String quranApiUrl = 'http://api.alquran.cloud/v1/ayah/';
+  static const String tafseerApiUrl = 'http://api.quran-tafseer.com/tafseer/';
   static const String hadithApiUrl = 'https://hadithapi.com/api/';
   static const String hadithApiKey =
       '\$2y\$10\$Woi3shlcGWsVP4V1atH9UusYTEAxcPBaMKEuwqnDrScJngXwj1kfW';

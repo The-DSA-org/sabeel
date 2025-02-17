@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sabeel_app/features/home/ui/widgets/daily_item_widget.dart';
+import 'package:sabeel_app/features/home/ui/widgets/daily_ayah_widget.dart';
+import 'package:sabeel_app/features/home/ui/widgets/daily_duaa_widget.dart';
+import 'package:sabeel_app/features/home/ui/widgets/daily_hadith_widget.dart';
+import 'package:sabeel_app/features/home/ui/widgets/daily_name_of_allah_widget.dart';
 import 'package:sabeel_app/features/home/ui/widgets/greeting_line.dart';
 import 'package:sabeel_app/features/home/ui/widgets/home_grid_view_section.dart';
 import 'package:sabeel_app/features/home/ui/widgets/prayer_times_widget.dart';
@@ -40,37 +43,10 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height: 10.h,
                 ),
-                DailyItemWidget(
-                  title: 'آية اليوم',
-                  mainText: 'إِنَّ اللَّهَ وَمَلَائِكَتَهُ يُصَلُّونَ عَلَى النَّبِيِّ ۚ يَا أَيُّهَا الَّذِينَ آمَنُوا صَلُّوا عَلَيْهِ وَسَلِّمُوا تَسْلِيمًا',
-                  subText: Text(
-                    'الأحزاب : 56',
-                    textAlign: TextAlign.center,
-                    style: AppTextStyles.font12CairoWhite,
-                  ),
-                ),
-                DailyItemWidget(
-                  title: 'من أسماء الله الحسنى',
-                  mainText: 'الرَّحْمَنُ',
-                  subText: Text(
-                      'كثير الرحمة وهو اسم مقصور على الله عز وجل ولا يجوز أن يقال رحمن لغير الله، وذلك لأن رحمته وسعت كل شيء وهو أرحم الراحمين',
-                      textAlign: TextAlign.center,
-                      style: AppTextStyles.font14CairoWhite,
-                    ),
-                ),
-                DailyItemWidget(
-                  title:'حديث اليوم',
-                  mainText:'المُسْلِمُ مَن سَلِمَ المُسْلِمُونَ مِن لِسانِهِ ويَدِهِ، والمُهاجِرُ مَن هَجَرَ ما نَهَى اللَّهُ عنْه',
-                  subText: Text(
-                  ' المصدر : صحيح البخاري | الصفحة أو الرقم : 6484 ',
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.font12CairoWhite,
-                ),
-                ),
-                DailyItemWidget(
-                  title:'دعاء اليوم',
-                  mainText:'لا إله إلا أنت سبحانك إني كنت من الظالمين',
-                ),
+                DailyAyahWidget(),
+                DailyNameOfAllahWidget(),
+                DailyDuaaWidget(),
+                DailyHadithWidget(),
                 SizedBox(
                   height: 30.h,
                 )

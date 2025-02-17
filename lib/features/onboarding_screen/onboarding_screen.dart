@@ -42,8 +42,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   void submit() {
     SharedPrefHelper.setData('onboarding', true).then((value) {
-        Navigator.pushNamedAndRemoveUntil(
-            context, Routes.homeLayout, (route) => false);
+        Navigator.pushReplacementNamed(
+            context, Routes.homeLayout);
 
     });
   }

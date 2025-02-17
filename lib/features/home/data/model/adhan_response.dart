@@ -288,17 +288,29 @@ class Timings {
     this.lastthird,
   });
 
+  @JsonKey(name:'Fajr')
   String? fajr;
+  @JsonKey(name:'Sunrise')
   String? sunrise;
+  @JsonKey(name:'Dhuhr')
   String? dhuhr;
+  @JsonKey(name:'Asr')
   String? asr;
+  @JsonKey(name:'Sunset')
   String? sunset;
+  @JsonKey(name:'Maghrib')
   String? maghrib;
+  @JsonKey(name:'Isha')
   String? isha;
+  @JsonKey(name:'Imsak')
   String? imsak;
+  @JsonKey(name:'Midnight')
   String? midnight;
+  @JsonKey(name:'Firstthird')
   String? firstthird;
+  @JsonKey(name:'Lastthird')
   String? lastthird;
+
 
   factory Timings.fromJson(Map<String, dynamic> json) => _$TimingsFromJson(json);
 

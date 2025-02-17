@@ -5,19 +5,25 @@ import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class AppTextStyles {
-  static TextStyle font16CairoBlack = GoogleFonts.cairo(
-    fontSize: 16.sp,
-    fontWeight: FontWeight.w500,
-    color: Colors.grey.shade900,
-  );
-
-  static TextStyle font12CairoWhite = GoogleFonts.cairo(
-    fontSize: 12.sp,
+  static TextStyle font14AmiriWhite = GoogleFonts.amiri(
+      decorationColor: AppColors.chineseWhite,
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w400,
+      color: AppColors.chineseWhite,
+      height: 2);
+  static TextStyle font16AmiriWhite = GoogleFonts.amiriQuran(
+      decorationColor: AppColors.chineseWhite,
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w400,
+      color: AppColors.chineseWhite,
+      height: 2);
+  static TextStyle font8CairoWhite = GoogleFonts.cairo(
+    fontSize: 8.sp,
     fontWeight: FontWeight.w400,
     color: AppColors.chineseWhite,
   );
-  static TextStyle font8CairoWhite = GoogleFonts.cairo(
-    fontSize: 8.sp,
+  static TextStyle font12CairoWhite = GoogleFonts.cairo(
+    fontSize: 12.sp,
     fontWeight: FontWeight.w400,
     color: AppColors.chineseWhite,
   );
@@ -25,6 +31,11 @@ class AppTextStyles {
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
     color: AppColors.chineseWhite,
+  );
+  static TextStyle font16CairoBlack = GoogleFonts.cairo(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+    color: Colors.grey.shade900,
   );
   static TextStyle font16CairoWhite = GoogleFonts.cairo(
     fontSize: 16.sp,
