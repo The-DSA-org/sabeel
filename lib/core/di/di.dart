@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sabeel_app/core/networking/apis/adhan_api_service/adhan_api_service.dart';
 import 'package:sabeel_app/core/networking/apis/hadith_api_service/hadith_api_service.dart';
+import 'package:sabeel_app/core/networking/apis/quran_api_service/quran_api_service.dart';
+import 'package:sabeel_app/core/networking/apis/quran_api_service/tafseer_api_service.dart';
 import 'package:sabeel_app/features/azkar/data/azkar_repo.dart';
 import 'package:sabeel_app/features/azkar/logic/azkar_cubit.dart';
 import 'package:sabeel_app/features/hadith/data/hadith_repo.dart';
@@ -22,7 +24,9 @@ Future<void> setupGetIt() async {
 
   //home screen
   getIt.registerLazySingleton<AdhanApiService>(() => AdhanApiService(dio));
-  getIt.registerLazySingleton<HomeScreenRepo>(() => HomeScreenRepo(getIt()));
+  getIt.registerLazySingleton<QuranApiService>(() => QuranApiService(dio));
+  getIt.registerLazySingleton<TafseerApiService>(() => TafseerApiService(dio));
+  getIt.registerLazySingleton<HomeScreenRepo>(() => HomeScreenRepo(getIt(),getIt(),getIt()));
   getIt.registerFactory<HomeScreenCubit>(() => HomeScreenCubit(getIt()));
 
   // Azkar

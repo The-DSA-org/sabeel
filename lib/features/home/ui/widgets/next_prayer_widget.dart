@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sabeel_app/core/helpers/extension.dart';
 import 'package:sabeel_app/core/theming/app_colors.dart';
+import 'package:sabeel_app/features/home/ui/widgets/prayer_times_list.dart';
 
 import '../../../../core/di/di.dart';
 import '../../../../core/theming/app_text_styles.dart';
@@ -107,7 +108,7 @@ class _NextPrayerWidgetState extends State<NextPrayerWidget> {
 
                             Spacer(),
                             Text(
-                              entry.value.toString().toArabian(),
+                             convertTo12HourFormat(entry.value.toString()).toArabian(),
                               style: AppTextStyles.font20CairoWhite.copyWith(fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -143,7 +144,7 @@ class _NextPrayerWidgetState extends State<NextPrayerWidget> {
               ),
             );
           },
-          orElse: () => Center(child: Text('يرجى الإنتظار')),
+          orElse: () => Expanded(child: Center(child: Text('يرجى الإنتظار'))),
         );
       },
     );

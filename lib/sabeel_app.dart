@@ -27,7 +27,7 @@ class SabeelApp extends StatelessWidget {
           ],
           debugShowCheckedModeBanner: false,
           theme: darkTheme,
-          initialRoute: Routes.hadithScreen,
+          initialRoute: Routes.homeLayout,
           onGenerateRoute: appRouter.generateRoute,
         );
       },

@@ -76,28 +76,28 @@ class PrayerTimesList extends StatelessWidget {
               ],
             ),
           ),
-            orElse: () => Center(child: Text('يرجى الإنتظار')));
+            orElse: () => Expanded(child: Center(child: Text('يرجى الإنتظار'))));
       },
     );
   }
-  String convertTo12HourFormat(String time24) {
-    // Split the input time into hours and minutes
-    List<String> parts = time24.split(':');
-    int hour = int.parse(parts[0]);
-    String minutes = parts[1];
+}
+String convertTo12HourFormat(String time24) {
+  // Split the input time into hours and minutes
+  List<String> parts = time24.split(':');
+  int hour = int.parse(parts[0]);
+  String minutes = parts[1];
 
-    // Determine AM or PM
-    // String period = hour >= 12 ? 'PM' : 'AM';
+  // Determine AM or PM
+  // String period = hour >= 12 ? 'PM' : 'AM';
 
-    // Convert hour to 12-hour format
-    if (hour > 12) {
-      hour -= 12;
-    } else if (hour == 0) {
-      hour = 12; // Midnight case
-    }
-
-    // Return the formatted time
-    return '${hour.toString().padLeft(2, '0')}:$minutes';
+  // Convert hour to 12-hour format
+  if (hour > 12) {
+    hour -= 12;
+  } else if (hour == 0) {
+    hour = 12; // Midnight case
   }
 
+  // Return the formatted time
+  return '${hour.toString().padLeft(2, '0')}:$minutes';
 }
+

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_text_styles.dart';
@@ -9,9 +10,18 @@ import '../../../../core/theming/app_text_styles.dart';
 class DailyItemWidget extends StatelessWidget {
   final String title;
   final String mainText;
-  final Text? subText;
+  final Widget? subText;
   final Widget? counter;
-  const DailyItemWidget({super.key, required this.title,required this.mainText, this.subText, this.counter,});
+  final bool isAyah;
+
+  const DailyItemWidget({
+    super.key,
+    required this.title,
+    required this.mainText,
+    this.subText,
+    this.counter,
+    this.isAyah=false
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +81,7 @@ class DailyItemWidget extends StatelessWidget {
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
+                width: double.infinity,
                 decoration: BoxDecoration(
                   color: AppColors.ebony,
                   borderRadius: BorderRadius.circular(16.r),
@@ -80,16 +91,22 @@ class DailyItemWidget extends StatelessWidget {
                     Text(
                       mainText,
                       textAlign: TextAlign.center,
-                      style: AppTextStyles.font14CairoWhite,
+                      style: isAyah?AppTextStyles.font16AmiriWhite:AppTextStyles.font14CairoWhite,
                     ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    subText==null?SizedBox():subText!
+                    subText == null
+                        ? SizedBox()
+                        : Column(
+                            children: [
+                              SizedBox(
+                                height: 10.h,
+                              ),
+                              subText!
+                            ],
+                          )
                   ],
                 ),
               ),
-              counter!=null?counter!:SizedBox(),
+              counter != null ? counter! : SizedBox(),
             ],
           ),
         ),
